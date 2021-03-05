@@ -48,23 +48,4 @@ q <- function (save="no", ...) {
   }
 }
 
-# list of packages to auto-load if interactive
-auto.loads <-c(
-	"devtools",
-	"magrittr",
-	"dplyr",
-	"tidyr",
-	"readr",
-	"ggplot2",
-	"purrr",
-	"knitr",
-	"ggrepel",
-	"patchwork",
-	"cowplot")
-# auto-load quietly
-if(interactive()){
-  invisible(sapply(auto.loads, sshhh))
-}
-# sapply(auto.loads, function(x) library(x, character.only=TRUE))
-
 message("\n*** Successfully loaded expanded .Rprofile ***\n")
