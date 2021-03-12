@@ -56,7 +56,7 @@ set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:.\ ,trail:·,eol:¬,nbsp:_
 set list
 " Highlight searches
 set hlsearch
@@ -142,9 +142,9 @@ let g:pandoc#syntax#conceal#use = 0
 let g:markdown_folding = 0
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'vim-pandoc/vim-pandoc'
