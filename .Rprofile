@@ -4,10 +4,10 @@ local({r <- getOption("repos")
       options(repos=r)})
 
 # Function to quiet package loading
-sshhh <- function(a.package){
-  suppressWarnings(suppressPackageStartupMessages(
-    library(a.package, character.only=TRUE)))
-}
+# sshhh <- function(a.package){
+#   suppressWarnings(suppressPackageStartupMessages(
+#     library(a.package, character.only=TRUE)))
+# }
 
 # Some R options
 options(bitmapType="cairo")        # use cairo for images
@@ -25,7 +25,7 @@ options(tab.width = 2)             # Tab width
 utils::rc.settings(ipck=TRUE)      # tab complete package names
 
 # pretty colors
-require("colorout")
+require("colorout", quietly = TRUE)
 
 # I never want to save
 q <- function (save="no", ...) {
@@ -48,4 +48,4 @@ q <- function (save="no", ...) {
   }
 }
 
-message("\n*** Successfully loaded expanded .Rprofile ***\n")
+# message("\n*** Successfully loaded expanded .Rprofile ***\n")

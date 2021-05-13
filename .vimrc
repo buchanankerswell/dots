@@ -30,6 +30,10 @@ let mapleader=","
 let maplocalleader = ";"
 " Set small time limit to enter commands after leader
 set timeout timeoutlen=3000 ttimeoutlen=100
+" No autoindent
+set noautoindent
+set nocindent
+set nosmartindent
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -37,7 +41,7 @@ set noeol
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 if exists("&undodir")
-	set undodir=~/.vim/undo
+  set undodir=~/.vim/undo
 endif
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
@@ -83,14 +87,14 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 " Start scrolling three lines before the horizontal window border
-set scrolloff=3
+set scrolloff=4
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
@@ -119,9 +123,9 @@ else
 endif
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
-	\ pumvisible() ? "\<C-n>" :
-	\ <SID>check_back_space() ? "\<TAB>" :
-	\ coc#refresh()
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
